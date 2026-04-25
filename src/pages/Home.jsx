@@ -284,40 +284,43 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.slice(0, 3).map((project, index) => (
               <AnimatedSection key={project.id} delay={index * 0.15}>
-                <motion.div
-                  whileHover={{ y: -8 }}
-                  className="group bg-light-card dark:bg-dark-200 rounded-2xl overflow-hidden border border-light-border dark:border-gold-500/10 hover:border-gold-700/30 dark:hover:border-gold-500/30 transition-all duration-500"
-                >
-                  <div className="h-48 bg-gray-200 dark:bg-black relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-light-card dark:from-dark-200 to-transparent opacity-60" />
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-gold-700/10 to-gold-800/5 dark:from-gold-500/10 dark:to-gold-600/5"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-heading font-semibold text-dark-200 dark:text-white mb-2 group-hover:text-gold-700 dark:group-hover:text-gold-400 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-2">
-                      {project.summary}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {project.genres.slice(0, 3).map((genre) => (
-                        <span
-                          key={genre}
-                          className="text-xs px-3 py-1 rounded-full bg-gold-700/10 dark:bg-gold-500/10 text-gold-700 dark:text-gold-400 border border-gold-700/20 dark:border-gold-500/20"
-                        >
-                          {genre}
-                        </span>
-                      ))}
+                <Link to={`/projects/${project.id}`}>
+                  <motion.div
+                    whileHover={{ y: -8 }}
+                    className="group bg-light-card dark:bg-dark-200 rounded-2xl overflow-hidden border border-light-border dark:border-gold-500/10 hover:border-gold-700/30 dark:hover:border-gold-500/30 transition-all duration-500"
+                  >
+                    <div className="h-48 bg-gray-200 dark:bg-black relative overflow-hidden">
+                      {/* <div className="absolute inset-0 bg-gradient-to-t from-light-card dark:from-dark-200 to-transparent opacity-60" /> */}
+                      <img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover" />
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-gold-700/10 to-gold-800/5 dark:from-gold-500/10 dark:to-gold-600/5"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                      />
                     </div>
-                    <p className="text-xs text-gray-400 dark:text-gray-500">
-                      Target: {project.targetAudience}
-                    </p>
-                  </div>
-                </motion.div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-heading font-semibold text-dark-200 dark:text-white mb-2 group-hover:text-gold-700 dark:group-hover:text-gold-400 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-2">
+                        {project.summary}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {project.genres.slice(0, 3).map((genre) => (
+                          <span
+                            key={genre}
+                            className="text-xs px-3 py-1 rounded-full bg-gold-700/10 dark:bg-gold-500/10 text-gold-700 dark:text-gold-400 border border-gold-700/20 dark:border-gold-500/20"
+                          >
+                            {genre}
+                          </span>
+                        ))}
+                      </div>
+                      <p className="text-xs text-gray-400 dark:text-gray-500">
+                        Target: {project.targetAudience}
+                      </p>
+                    </div>
+                  </motion.div>
+                </Link>
               </AnimatedSection>
             ))}
           </div>

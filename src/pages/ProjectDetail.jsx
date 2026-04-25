@@ -37,6 +37,7 @@ function ProjectDetail() {
       <section className="relative pt-24 pb-0 overflow-hidden">
         <div className="w-full h-64 sm:h-80 md:h-[28rem] bg-gray-200 dark:bg-black relative">
           <div className="absolute inset-0 bg-gradient-to-t from-light-bg dark:from-dark-500 via-transparent to-light-card-alt/50 dark:to-black/50 transition-colors duration-400" />
+          <img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover" />
         </div>
       </section>
 

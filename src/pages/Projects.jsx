@@ -57,7 +57,8 @@ function Projects() {
                   >
                     <div className="grid grid-cols-1 md:grid-cols-3">
                       <div className="h-64 md:h-auto bg-gray-200 dark:bg-black relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-light-card/50 dark:to-dark-200/50 hidden md:block" />
+                        {/* <div className="absolute inset-0 bg-gradient-to-r from-transparent to-light-card/50 dark:to-dark-200/50 hidden md:block" /> */}
+                        <img src={project.thumbnail} alt={project.title} className="w-full h-full object-cover" />
                         <motion.div
                           className="absolute inset-0 bg-gradient-to-r from-gold-700/10 to-gold-800/5 dark:from-gold-500/10 dark:to-gold-600/5"
                           initial={{ opacity: 0 }}

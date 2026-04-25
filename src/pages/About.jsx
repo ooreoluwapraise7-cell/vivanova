@@ -46,7 +46,8 @@ function About() {
             <AnimatedSection direction="left">
               <div className="relative">
                 <div className="w-full h-80 md:h-96 bg-gray-200 dark:bg-black rounded-2xl border border-light-border dark:border-gold-500/20 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-gold-700/10 dark:from-gold-500/10 to-transparent" />
+                  {/* <div className="absolute inset-0 bg-gradient-to-br from-gold-700/10 dark:from-gold-500/10 to-transparent" /> */}
+                  <img src="/about-us.jpg" alt="About the Company" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-br from-gold-700 to-gold-800 dark:from-gold-500 dark:to-gold-600 rounded-2xl opacity-20 blur-xl" />
               </div>
@@ -117,7 +118,8 @@ function About() {
             <AnimatedSection direction="right">
               <div className="relative">
                 <div className="w-full h-80 md:h-96 bg-gray-200 dark:bg-black rounded-2xl border border-light-border dark:border-gold-500/20 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-tl from-gold-700/10 dark:from-gold-500/10 to-transparent" />
+                  {/* <div className="absolute inset-0 bg-gradient-to-tl from-gold-700/10 dark:from-gold-500/10 to-transparent" /> */}
+                  <img src="/board.jpg" alt="About the Company" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute -top-4 -left-4 w-24 h-24 bg-gradient-to-br from-gold-700 to-gold-800 dark:from-gold-500 dark:to-gold-600 rounded-full opacity-20 blur-xl" />
               </div>
