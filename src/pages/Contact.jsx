@@ -3,10 +3,12 @@ import { motion } from 'framer-motion'
 import { FaEnvelope, FaMapMarkerAlt, FaTiktok } from 'react-icons/fa'
 import AnimatedSection from '../components/AnimatedSection'
 import GoldButton from '../components/GoldButton'
+import { form } from 'framer-motion/client'
 
 function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -14,9 +16,37 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setFormData({ name: '', email: '', message: '' })
-    setTimeout(() => setSubmitted(false), 3000)
+    setLoading(true)
+    fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        service_id: 'service_puen6eu',
+        template_id: 'template_6f7mduc',
+        user_id: 'rvQEzVdED_xAUf81w',
+        template_params: {
+            'title': 'VivaNovaWorks',
+            'name': formData.name,
+            'email': formData.email,
+            'message': formData.message,
+        }
+    }),
+    })
+      .then((response) => {
+      setLoading(false)
+        if (response.ok) {
+          console.log('Email sent successfully!')
+          setSubmitted(true)
+          setFormData({ name: '', email: '', message: '' })
+          setTimeout(() => setSubmitted(false), 3000)
+        } else {
+          // console.error('Failed to send email:', response.statusText)
+        }
+      })
+      .catch((error) => {
+        setLoading(false)
+        // console.error('Error sending email:', error)
+      })  
   }
 
   return (
@@ -116,7 +146,9 @@ function Contact() {
                       placeholder="Your message"
                     />
                   </div>
-                  <GoldButton type="submit">Send Message</GoldButton>
+                  <GoldButton type="submit" disabled={loading}>
+                    {loading ? "Please Wait..." : "Send Message"}
+                  </GoldButton>
                 </form>
               </div>
             </AnimatedSection>

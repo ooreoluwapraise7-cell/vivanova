@@ -112,7 +112,7 @@ function Home() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-16 md:py-20 bg-light-card-alt/50 dark:bg-black/50 overflow-hidden transition-colors duration-400">
+      {/* <section className="py-16 md:py-20 bg-light-card-alt/50 dark:bg-black/50 overflow-hidden transition-colors duration-400">
         <AnimatedSection>
           <h2 className="text-center text-3xl md:text-4xl font-heading font-bold text-gold-700 dark:text-gold-400 mb-12">
             Our Partners
@@ -136,7 +136,7 @@ function Home() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* What We Do Section */}
       <section className="py-20 md:py-28 px-4">
