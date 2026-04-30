@@ -169,8 +169,8 @@ function Contact() {
                       <h3 className="text-lg font-heading font-semibold text-dark-200 dark:text-white mb-2">
                         Email
                       </h3>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">hello@vivanova-works.com</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-sm">info@vivanova-works.com</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">hello@vivanovaworks.com</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">info@vivanovaworks.com</p>
                     </div>
                   </div>
                 </motion.div>

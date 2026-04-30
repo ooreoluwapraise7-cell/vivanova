@@ -69,8 +69,8 @@ For investment enquiries
 We welcome enquiries from investors, partners, and collaborators interested in building the future of animation with us.
 Include form here to: name, email, message, submit
 Email
- hello@vivanova-works.com
- info@vivanova-works.com 
+ hello@vivanovaworks.com
+ info@vivanovaworks.com 
 Address
  96–98 Corporation Road
  Middlesbrough, TS1 2RB
